@@ -14,7 +14,7 @@ function Button({ onClick, children }) {
   );
 }
 
-function TodoItem({ todo, onStatusChange }) {
+function TodoItem({ todo, onStatusChange, onDelete }) {
   const { itemName = 'Unnamed', dueDate = 'No Due Date', assignee = 'Nobody', status = 'Not Started'} = todo;
 
   const contentJsx = (
@@ -31,8 +31,8 @@ function TodoItem({ todo, onStatusChange }) {
         <Button onClick={onStatusChange}>
           <StatusButton status={status} />
         </Button>
-        <Button>
-          <DeleteButton taskName={itemName} />
+        <Button onClick={onDelete}>
+          <DeleteButton/>
         </Button>
       </div>
     </div>

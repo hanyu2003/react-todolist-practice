@@ -8,7 +8,10 @@ const initialTodos = [
   { id: 1, itemName: 'Todo 1', dueDate: '2025/05/21', assignee: 'a', status: 'Not Started' },
   { id: 2, itemName: 'Todo 2', dueDate: '2025/05/22', assignee: 'bb', status: 'Progress' },
   { id: 3, itemName: 'Todo 3', dueDate: '2025/05/23', assignee: 'ccc', status: 'Done' },
-  { id: 4, itemName: 'Todo 4', dueDate: '2025/05/24', assignee: 'dddd', status: 'Archived' },
+  { id: 4, itemName: 'Todo 4', dueDate: '2025/05/21', assignee: 'a', status: 'Not Started' },
+  { id: 5, itemName: 'Todo 5', dueDate: '2025/05/22', assignee: 'bb', status: 'Progress' },
+  { id: 6, itemName: 'Todo 6', dueDate: '2025/05/23', assignee: 'ccc', status: 'Done' },
+  { id: 7, itemName: 'Todo 7', dueDate: '2025/05/24', assignee: 'dddd', status: 'Archived' },
 ];
 
 export default function TodoLists() {
@@ -30,6 +33,10 @@ export default function TodoLists() {
     );
   }
 
+  function handlDelete(id) {
+    setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
+  }
+
   return (
     <div>
       {todos.map(todo => (
@@ -37,6 +44,7 @@ export default function TodoLists() {
           key={todo.id}
           todo={todo}
           onStatusChange={() => handleStatusChange(todo.id)}
+          onDelete={() => handlDelete(todo.id)}
         />
       ))}
     </div>
