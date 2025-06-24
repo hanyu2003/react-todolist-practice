@@ -3,7 +3,7 @@ function StatusButton({status}) {
         'Not Started': 'bg-gray-200 text-gray-700',
         'Progress': 'bg-indigo-100 text-blue-800',
         'Done': 'bg-lime-200 text-green-950',
-        'Archived': 'bg-yellow-200 text-yellow-900'
+        'Archived': 'bg-orange-100 text-yellow-900'
     };
     const color = colorMap[status] || 'bg-gray-200 text-gray-700';
 
