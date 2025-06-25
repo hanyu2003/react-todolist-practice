@@ -1,20 +1,20 @@
 import DeleteButton from './DeleteButton';
 import StatusButton from './StatusButton';
 
-function Button({ onClick, children }) {
+function Button({ my_handleClick, children }) {
   return (
-    <button
+    <span 
       onClick={e => {
         e.stopPropagation();
-        if (onClick) onClick();
+        if (my_handleClick) my_handleClick();
       }}
     >
       {children}
-    </button>
+    </span>
   );
 }
 
-function TodoItem({ todo, onStatusChange, onDelete }) {
+function TodoItem({ todo, onStatusChange, onDelete , onEdit }) {
   const { itemName = 'Unnamed', dueDate = 'No Due Date', assignee = 'Nobody', status = 'Not Started'} = todo;
 
   const contentJsx = (
@@ -28,10 +28,11 @@ function TodoItem({ todo, onStatusChange, onDelete }) {
         className="flex space-x-4 bg-pink-50 items-center p-2"
         onClick={() => alert('You are in the editing area!')}
       >
-        <Button onClick={onStatusChange}>
+        <Button my_handleClick={onStatusChange}>
           <StatusButton status={status} />
         </Button>
-        <Button onClick={onDelete}>
+        <Button my_handleClick={onEdit}> ✏️</Button>
+        <Button my_handleClick={onDelete}>
           <DeleteButton/>
         </Button>
       </div>

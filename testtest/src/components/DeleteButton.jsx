@@ -1,4 +1,4 @@
-function DeleteButton( {taskName='Unnamed'} ) {
+function DeleteButton( ) {
     return (
         <button 
             className = "text-sm text-red-500 hover:underline"
