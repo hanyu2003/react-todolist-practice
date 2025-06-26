@@ -7,7 +7,7 @@ function FilterBar({ selectedStatus, setSelectedStatus}) {
                 <button
                     key={status}
                     onClick={() => setSelectedStatus(status)}
-                    className={`px-3 py-1 rounded ${selectedStatus === status ? 'bg-blue-400 text-white' : 'bg-gray-200'}`}
+                    className={`px-3 py-1 rounded ${selectedStatus === status ? 'bg-pink-200 text-black' : 'bg-yellow-50'}`}
                 >
                     {status}
                 </button>
