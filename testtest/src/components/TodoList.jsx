@@ -1,6 +1,6 @@
 // src/components/TodoLists.jsx
 // import { useState } from 'react';
-import { useState, useReducer } from 'react';
+import { useReducer } from 'react';
 import TodoItem from './TodoItem';
 import AddTodo from './AddTodo';
 import EditTodo from './EditTodo';
@@ -9,15 +9,7 @@ import FilterBar from './FilterBar';
 const MIN_DATE = "2020-01-01";   // ⭐ 最早允許的任務起始日
 const MAX_DATE = "2030-12-31";   // ⭐ 最晚允許的任務截止日
 const statusOrder = ['Not Started', 'Progress', 'Done', 'Archived'];
-const initialTodos = [
-    { id: 1, itemName: 'Todo 1', dueDate: '2025/05/21', assignee: 'a', status: 'Not Started' },
-    { id: 2, itemName: 'Todo 2', dueDate: '2025/05/22', assignee: 'bb', status: 'Progress' },
-    { id: 3, itemName: 'Todo 3', dueDate: '2025/05/23', assignee: 'ccc', status: 'Done' },
-    { id: 4, itemName: 'Todo 4', dueDate: '2025/05/21', assignee: 'a', status: 'Not Started' },
-    // { id: 5, itemName: 'Todo 5', dueDate: '2025/05/22', assignee: 'bb', status: 'Progress' },
-    // { id: 6, itemName: 'Todo 6', dueDate: '2025/05/23', assignee: 'ccc', status: 'Done' },
-    { id: 7, itemName: 'Todo 7', dueDate: '2025/05/24', assignee: 'dddd', status: 'Archived' },
-];
+
 const initialStates = {
     todos: [
         { id: 1, itemName: 'Todo 1', dueDate: '2025/05/21', assignee: 'a', status: 'Not Started' },
@@ -112,9 +104,7 @@ function my_reducer(state, action) {
             editingId: null,
             edit_formData: { itemName: '', dueDate: '', assignee: ''},
         }
-
-
-
+        
     case 'EDIT_CANCEL': 
         return {
             ...state,
