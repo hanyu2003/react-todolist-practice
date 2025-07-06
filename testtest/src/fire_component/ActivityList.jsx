@@ -331,8 +331,8 @@ export default function ActivityList() {
             {/* + 新增 / ❌ 取消新增 */}
             <button
                 onClick={() => dispatch({ type: 'TOGGLE_ADD_MODE' })}
-                className="px-4 py-2 rounded bg-purple-500 text-white hover:bg-purple-600 disabled:opacity-50"
-                disabled={isEditing}
+                className="px-4 py-2 rounded text-white bg-fuchsia-500 hover:bg-fuchsia-600 disabled:opacity-50"
+                // disabled={isEditing}
             >
                 {isAdding ? '取消新增' : '新增活動'}
             </button>
