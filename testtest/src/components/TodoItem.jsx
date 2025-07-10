@@ -14,11 +14,11 @@ function Button({ my_handleClick, children }) {
   );
 }
 
-function TodoItem({ todo, onStatusChange, onDelete , onEdit }) {
+function TodoItem({ todo, onStatusChange, onDelete , onEdit, onClick}) {
   const { itemName = 'Unnamed', dueDate = 'No Due Date', assignee = 'Nobody', status = 'Not Started'} = todo;
 
   const contentJsx = (
-    <div className="flex justify-between items-center border-b py-2">
+    <div className="flex justify-between items-center border-b py-2" onClick={onClick}>
       <span className="text-gray-700">{itemName}</span>
       <span className="text-sm text-gray-500">
         {dueDate === 'No Due Date' ? dueDate : `Due: ${dueDate}`}
